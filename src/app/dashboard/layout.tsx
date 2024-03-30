@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth'
-import SideNav from '../components/dasboard/SideNav'
+import SideNav from '../components/dashboard/SideNav'
 import { redirect } from 'next/navigation'
 
 export default async function Layout({

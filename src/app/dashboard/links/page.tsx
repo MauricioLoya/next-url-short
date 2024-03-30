@@ -1,3 +1,4 @@
+import { Button } from '@/app/components/shared/Button'
 import Header from '@/app/components/shared/Header'
 import { listAllLinks } from '@/app/lib/links/sql/links'
 import { findUserByEmail } from '@/app/lib/users/sql/user'
@@ -23,11 +24,8 @@ export default async function LinksPage() {
         title="🔗 Links"
         description="Manage your links"
         actionButton={
-          <Link
-            href="/dashboard/links/create"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-          >
-            + New Link
+          <Link href="/dashboard/links/create">
+            <Button>+ New Link</Button>
           </Link>
         }
       />
@@ -70,7 +68,7 @@ export default async function LinksPage() {
                   <td className="flex items-center justify-center gap-3 px-4 py-2  text-gray-900">
                     <a href={`https://www.dalink.xyz/${link.shortCode}`}>See</a>
                     <Link
-                      href={`/dashboard/links/${link.id}`}
+                      href={`/dashboard/links/${link.shortCode}`}
                       className="text-indigo-600 hover:text-indigo-900"
                     >
                       Edit

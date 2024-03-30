@@ -14,7 +14,7 @@ export interface Link {
   shortCode: string
   createdAt: string
   expiresAt: string
-  isActive: string
+  isActive: boolean
 }
 
 export interface Click {

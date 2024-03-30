@@ -15,6 +15,9 @@ export default async function RedirectionPage({ params }: Params) {
   if (!link) {
     return '404 Not Found'
   }
+  if (!link.isActive) {
+    return '404 Not Found (1)'
+  }
   const userAgent = headers().get('user-agent') ?? undefined
   const referer = headers().get('referer') ?? undefined
   const ip = (headers().get('x-forwarded-for') ?? '127.0.0.1').split(',')[0]

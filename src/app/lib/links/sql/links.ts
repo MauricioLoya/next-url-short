@@ -56,6 +56,33 @@ export async function findLinkByShortCode(
   }
 }
 
+export async function toggleLinkStatus(linkId: number): Promise<void> {
+  try {
+    await sql`
+      UPDATE links
+      SET isactive = NOT isactive
+      WHERE id = ${linkId}
+    `
+  } catch (error) {
+    throw error
+  }
+}
+
+export async function checkIfLinkBelongsToUser(
+  linkId: number,
+  userId: number
+): Promise<boolean> {
+  try {
+    const result = await sql`
+      SELECT id FROM links
+      WHERE id = ${linkId} AND userid = ${userId}
+    `
+    return result.rowCount > 0
+  } catch (error) {
+    throw error
+  }
+}
+
 export async function listAllLinks(userId: number): Promise<Link[]> {
   try {
     const result = await sql`
