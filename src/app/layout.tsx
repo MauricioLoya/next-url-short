@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { getServerSession } from 'next-auth'
 import SessionProvider from './components/SessionProvider'
 
-const inter = Inter({ subsets: ['latin'] })
+const jetBrans = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +20,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <title>daLink</title>
-      <body className={inter.className}>
+      <body className={jetBrans.className}>
         <SessionProvider session={session}>{children}</SessionProvider>
       </body>
     </html>

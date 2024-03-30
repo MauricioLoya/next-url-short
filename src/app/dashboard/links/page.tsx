@@ -34,10 +34,10 @@ export default async function LinksPage() {
           <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
             <thead className="ltr:text-left rtl:text-right">
               <tr>
-                <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                <th className="text-left whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                   Url
                 </th>
-                <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                <th className="text-left whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                   Short Code
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
@@ -59,7 +59,7 @@ export default async function LinksPage() {
                     {link.originalUrl}
                   </td>
                   <td className="px-4 py-2 text-gray-900">{link.shortCode}</td>
-                  <td className="px-4 py-2 text-gray-900">
+                  <td className="px-4 py-2 text-center text-gray-900">
                     {formatDateToLocal(link.createdAt)}
                   </td>
                   <td className="px-4 py-2 text-center text-gray-900">
