@@ -5,7 +5,6 @@ import {
 import { Box } from '../../shared/Box'
 import { getServerSession } from 'next-auth'
 import { findUserByEmail } from '@/app/lib/users/sql/user'
-import { use } from 'react'
 import { formatClicks } from '@/app/lib/utils'
 
 interface Props {

@@ -19,6 +19,7 @@ export default async function RootLayout({
   const session = await getServerSession()
   return (
     <html lang="en">
+      <title>daLink</title>
       <body className={inter.className}>
         <SessionProvider session={session}>{children}</SessionProvider>
       </body>
