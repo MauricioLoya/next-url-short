@@ -68,7 +68,7 @@ export default async function LinksPage() {
                     {link.isActive ? 'Yes' : 'No'}
                   </td>
                   <td className="flex items-center justify-center gap-3 px-4 py-2  text-gray-900">
-                    <a href={`http://localhost:3000/${link.shortCode}`}>See</a>
+                    <a href={`https://www.dalink.xyz/${link.shortCode}`}>See</a>
                     <Link
                       href={`/dashboard/links/${link.id}`}
                       className="text-indigo-600 hover:text-indigo-900"
