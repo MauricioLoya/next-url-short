@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/ua-parser-js": "^0.7.39",
     "@vercel/postgres": "^0.7.2",
     "next": "14.1.4",
     "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
-    "short-unique-id": "^5.0.3"
+    "short-unique-id": "^5.0.3",
+    "ua-parser-js": "^1.0.37"
   },
   "devDependencies": {
     "@types/node": "^20",
