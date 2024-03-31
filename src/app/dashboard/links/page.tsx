@@ -24,9 +24,11 @@ export default async function LinksPage() {
         title="🔗 Links"
         description="Manage your links"
         actionButton={
-          <Link href="/dashboard/links/create">
-            <Button>+ New Link</Button>
-          </Link>
+          <div className="flex justify-center items-center">
+            <Link href="/dashboard/links/create">
+              <Button>+ New Link</Button>
+            </Link>
+          </div>
         }
       />
       <div className="rounded-lg border border-gray-200">
@@ -66,12 +68,11 @@ export default async function LinksPage() {
                     {link.isActive ? 'Yes' : 'No'}
                   </td>
                   <td className="flex items-center justify-center gap-3 px-4 py-2  text-gray-900">
-                    <a href={`https://www.dalink.xyz/${link.shortCode}`}>See</a>
                     <Link
                       href={`/dashboard/links/${link.shortCode}`}
                       className="text-indigo-600 hover:text-indigo-900"
                     >
-                      Edit
+                      Details
                     </Link>
                   </td>
                 </tr>
