@@ -25,6 +25,7 @@ export async function createLink(dto: DtoCreateLink): Promise<void> {
       RETURNING *
     `
   } catch (error) {
+    console.log(error)
     throw error
   }
 }
@@ -52,7 +53,8 @@ export async function findLinkByShortCode(
     }
     return result.rows[0] as Link
   } catch (error) {
-    throw error
+    console.log(error)
+    throw new Error('Error finding link')
   }
 }
 
@@ -64,7 +66,8 @@ export async function toggleLinkStatus(linkId: number): Promise<void> {
       WHERE id = ${linkId}
     `
   } catch (error) {
-    throw error
+    console.log(error)
+    throw new Error('Error toggling link status')
   }
 }
 
@@ -79,7 +82,8 @@ export async function checkIfLinkBelongsToUser(
     `
     return result.rowCount > 0
   } catch (error) {
-    throw error
+    console.log(error)
+    throw new Error('Error checking if link belongs to user')
   }
 }
 
@@ -104,14 +108,20 @@ export async function listAllLinks(userId: number): Promise<Link[]> {
     }
     return result.rows as Link[]
   } catch (error) {
-    throw error
+    console.log(error)
+    throw new Error('Error listing links')
   }
 }
 
 async function checkIfShortCodeExists(shortCode: string) {
-  const result = await sql`
-        SELECT * FROM links
-        WHERE shortcode = ${shortCode}
-    `
-  return result.rowCount > 0
+  try {
+    const result = await sql`
+          SELECT * FROM links
+          WHERE shortcode = ${shortCode}
+      `
+    return result.rowCount > 0
+  } catch (error) {
+    console.log(error)
+    throw new Error('Error checking if short code exists')
+  }
 }

@@ -16,7 +16,7 @@ export const postLink = async (form: FormData) => {
   }
   try {
     const user = await findUserByEmail(session.user.email)
-    if (!user) return
+    if (!user) throw new Error('User not found')
 
     await createLink({
       originalLink,

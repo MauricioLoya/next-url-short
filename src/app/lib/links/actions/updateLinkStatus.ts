@@ -14,9 +14,11 @@ export const updateLinkStatus = async (form: FormData) => {
   if (!linkId || !shortCode) return
   try {
     const user = await findUserByEmail(session.user.email)
-    if (!user) return
+    if (!user) throw new Error('User not found')
+
     const linkBelongsToUser = await checkIfLinkBelongsToUser(linkId, user.id)
-    if (!linkBelongsToUser) return
+    if (!linkBelongsToUser) throw new Error('Link does not belong to user')
+
     await toggleLinkStatus(linkId)
     revalidatePath('/dashboard' + shortCode)
     revalidatePath('/dashboard/links/' + shortCode)

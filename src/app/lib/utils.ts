@@ -23,3 +23,11 @@ export function formatClicks(clicks: number): string {
     return `${(clicks / 1000000000).toFixed(1).replace(/\.0$/, '')}B clicks`
   }
 }
+
+export function getErrorMessage(error: unknown): string {
+  if (error instanceof Error) {
+    return error.message
+  } else {
+    return 'An error occurred'
+  }
+}
