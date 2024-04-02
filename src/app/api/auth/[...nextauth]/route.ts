@@ -37,7 +37,6 @@ const authOptions = {
             provider,
             first_name: name
           })
-          console.log('userCreated', userCreated)
           if (!userCreated) return false
         }
       } catch (error) {

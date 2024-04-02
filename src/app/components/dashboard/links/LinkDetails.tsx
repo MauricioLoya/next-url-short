@@ -123,7 +123,6 @@ export const LinkDetails = async ({ shortCode }: Props) => {
       </Box>
     )
   } catch (error) {
-    console.log('error', error)
     return <div>505 Server Error</div>
   }
 }

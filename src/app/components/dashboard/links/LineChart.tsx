@@ -7,8 +7,6 @@ type Props = {
 
 export default async function RevenueChart(props: Props) {
   const clicksByDay = await getLastClickedDays(props.linkId, props.limit)
-  console.log(clicksByDay)
-
   const chartHeight = 350
   const { yAxisLabels, topLabel } = generateYAxis(clicksByDay)
 

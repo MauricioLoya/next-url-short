@@ -24,7 +24,6 @@ export default async function DashboardPage() {
   const todayTotalClicks = await getTodayTotalClicks(user.id)
   const lastCreatedLinks = await getLastCreatedLinks(user.id)
   const mostClickedLinks = await getMostClickedLink(user.id)
-  console.log('todayTotalClicks', todayTotalClicks)
 
   return (
     <div className="w-full">
