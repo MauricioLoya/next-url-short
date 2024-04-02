@@ -80,7 +80,7 @@ export const LinkDetails = async ({ shortCode }: Props) => {
                   {topFiveBrowsers.length === 0 && <p>No data available</p>}
                   {topFiveBrowsers.map((item, index) => (
                     <li key={index}>
-                      {item.browser + `v(${item.browserversion})`}
+                      {item.browser + ` v(${item.browserversion})`}
                     </li>
                   ))}
                 </ol>
