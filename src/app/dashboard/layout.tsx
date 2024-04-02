@@ -1,6 +1,8 @@
 import { getServerSession } from 'next-auth'
 import SideNav from '../components/dashboard/SideNav'
 import { redirect } from 'next/navigation'
+import { Suspense } from 'react'
+import LinkPageSkeleton from '../components/dashboard/DashboardPageSkeleton'
 
 export default async function Layout({
   children
@@ -17,7 +19,7 @@ export default async function Layout({
         <SideNav />
       </div>
       <main className="flex-grow p-6 md:overflow-y-auto md:p-12">
-        {children}
+        <Suspense fallback={<LinkPageSkeleton />}>{children}</Suspense>
       </main>
     </div>
   )
