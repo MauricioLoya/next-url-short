@@ -1,3 +1,5 @@
+import { ClickByDay } from './click/sql/getLastClickedDays'
+
 export const formatDateToLocal = (
   dateStr: string,
   locale: string = 'en-US'
@@ -30,4 +32,46 @@ export function getErrorMessage(error: unknown): string {
   } else {
     return 'An error occurred'
   }
+}
+
+export const generateYAxis = (clicks: ClickByDay[]) => {
+  const yAxisLabels = []
+  const highestRecord = Math.max(...clicks.map(click => click.count))
+  const topLabel = Math.ceil(highestRecord)
+
+  if (topLabel < 10) {
+    for (let i = topLabel; i >= 0; i--) {
+      yAxisLabels.push(`${i}`)
+    }
+  } else if (topLabel < 100) {
+    for (let i = topLabel; i >= 0; i -= 10) {
+      yAxisLabels.push(`${i}`)
+    }
+  } else if (topLabel < 1000) {
+    for (let i = topLabel; i >= 0; i -= 100) {
+      yAxisLabels.push(`${i}`)
+    }
+  } else if (topLabel < 10000) {
+    for (let i = topLabel; i >= 0; i -= 1000) {
+      yAxisLabels.push(`${i}`)
+    }
+  } else if (topLabel < 100000) {
+    for (let i = topLabel; i >= 0; i -= 10000) {
+      yAxisLabels.push(`${i}`)
+    }
+  } else if (topLabel < 1000000) {
+    for (let i = topLabel; i >= 0; i -= 100000) {
+      yAxisLabels.push(`${i}`)
+    }
+  } else if (topLabel < 10000000) {
+    for (let i = topLabel; i >= 0; i -= 1000000) {
+      yAxisLabels.push(`${i}`)
+    }
+  } else if (topLabel < 100000000) {
+    for (let i = topLabel; i >= 0; i -= 10000000) {
+      yAxisLabels.push(`${i}`)
+    }
+  }
+
+  return { yAxisLabels, topLabel }
 }
