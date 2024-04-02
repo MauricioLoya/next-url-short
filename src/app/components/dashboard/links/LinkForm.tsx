@@ -29,11 +29,11 @@ export default function LinkForm() {
           minLength={6}
           id="short-code"
           name="shortCode"
-          label={'Your link (optional)'}
+          label={'Short code (optional)'}
           placeholder="Enter your original link"
           type="text"
         />
-        <small>If it keeps blank your code will be autogenerate</small>
+        <small>If Short code keeps blank your code will be autogenerate</small>
         <SubmitButton>Create Link</SubmitButton>
       </div>
     </form>
