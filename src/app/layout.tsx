@@ -4,6 +4,7 @@ import './globals.css'
 import { getServerSession } from 'next-auth'
 import SessionProvider from './components/SessionProvider'
 import { Toaster } from 'react-hot-toast'
+import { Analytics } from '@vercel/analytics/react'
 
 const jetBrans = JetBrains_Mono({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default async function RootLayout({
       <body className={jetBrans.className}>
         <SessionProvider session={session}>{children}</SessionProvider>
         <Toaster position="bottom-center" />
+        <Analytics />
       </body>
     </html>
   )

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/ua-parser-js": "^0.7.39",
+    "@vercel/analytics": "^1.2.2",
     "@vercel/postgres": "^0.7.2",
     "next": "14.1.4",
     "next-auth": "^4.24.7",
