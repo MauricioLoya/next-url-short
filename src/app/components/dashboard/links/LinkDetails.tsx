@@ -11,7 +11,6 @@ import getTotalClickByLinkId from '@/app/lib/click/sql/getTotalClickByLinkId'
 import getTopFiveBrowsers from '@/app/lib/click/sql/getTopFiveBrowsers'
 import getTopFiveReferrer from '@/app/lib/click/sql/getTopFiveReferrer'
 import getTopfivePlatforms from '@/app/lib/click/sql/getTopPlatforms'
-import getLastClickedDays from '@/app/lib/click/sql/getLastClickedDays'
 import LineChart from './LineChart'
 
 interface Props {
