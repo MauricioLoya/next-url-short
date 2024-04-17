@@ -1,4 +1,4 @@
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 import NextAuth, { Account, Profile, User } from 'next-auth'
 // import Discord from 'next-auth/providers/discord'
