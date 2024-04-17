@@ -1,5 +1,3 @@
-export const runtime = 'edge'
-
 import Header from '@/app/components/shared/Header'
 import LinkForm from '@/app/components/dashboard/links/LinkForm'
 

@@ -1,4 +1,4 @@
-export const runtime = 'edge'
+
 
 import { LinkDetails } from '@/app/components/dashboard/links/LinkDetails'
 import { ToggleStatus } from '@/app/components/dashboard/links/ToggleStatus'

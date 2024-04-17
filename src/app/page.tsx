@@ -1,4 +1,4 @@
-export const runtime = 'edge'
+
 
 import NavBar from './components/landing/NavBar'
 import Hero from './components/landing/Hero'
