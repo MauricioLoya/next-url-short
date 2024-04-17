@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import { headers } from 'next/headers'
 import { findLinkByShortCode } from '../lib/links/sql/links'
 import { redirect } from 'next/navigation'

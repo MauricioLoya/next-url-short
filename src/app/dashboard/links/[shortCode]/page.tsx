@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import { LinkDetails } from '@/app/components/dashboard/links/LinkDetails'
 import { ToggleStatus } from '@/app/components/dashboard/links/ToggleStatus'
 import Header from '@/app/components/shared/Header'

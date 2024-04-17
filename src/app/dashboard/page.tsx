@@ -1,8 +1,9 @@
+export const runtime = 'edge'
+
 import Header from '../components/shared/Header'
 import InfoCard from '../components/dashboard/InfoCard'
 import getTotalLinksByUser from '../lib/links/sql/getTotalLinksByUser'
 import getTodayTotalClicks from '../lib/click/sql/getTodayTotalClicks'
-import { get } from 'http'
 import getLastCreatedLinks from '../lib/links/sql/getLastCreatedLinks'
 import getMostClickedLink from '../lib/click/sql/getMostClickedLink'
 import { getServerSession } from 'next-auth'
