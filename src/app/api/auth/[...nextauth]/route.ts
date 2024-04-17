@@ -1,5 +1,3 @@
-// export const runtime = 'edge'
-
 import NextAuth, { Account, Profile, User } from 'next-auth'
 // import Discord from 'next-auth/providers/discord'
 import GithubProvider from 'next-auth/providers/github'
