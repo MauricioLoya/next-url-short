@@ -12,6 +12,8 @@ import getTopFiveBrowsers from '@/app/lib/click/sql/getTopFiveBrowsers'
 import getTopFiveReferrer from '@/app/lib/click/sql/getTopFiveReferrer'
 import getTopfivePlatforms from '@/app/lib/click/sql/getTopPlatforms'
 import LineChart from './LineChart'
+import CopyText from './CopyText'
+import Link from 'next/link'
 
 interface Props {
   shortCode: string
@@ -23,7 +25,9 @@ export const LinkDetails = async ({ shortCode }: Props) => {
       return <div>404 Not Found</div>
     }
     const session = await getServerSession()
-    if (!session?.user?.email) return
+    if (!session?.user?.email) {
+      return <div>404 Not Found</div>
+    }
     const user = await findUserByEmail(session.user.email)
     if (!user) return <div>404 Not Found</div>
     const LinkBelongsToUser = await checkIfLinkBelongsToUser(
@@ -43,8 +47,24 @@ export const LinkDetails = async ({ shortCode }: Props) => {
 
     return (
       <Box>
+        <div className="mb-10">
+          <Link
+            href="/dashboard/links"
+            className="text-blue-600 hover:underline text-xs font-semibold"
+          >
+            🔙 Back to my Links
+          </Link>
+        </div>
+
         <div className="flow-root">
           <dl className="-my-3 divide-y divide-gray-100 text-sm">
+            <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+              <dt className="font-medium text-gray-900">daLink</dt>
+              <dd className="text-gray-700 sm:col-span-2">
+                <code className="mr-3">dalink.xyz/{currentLink.shortCode}</code>
+                <CopyText text={`dalink.xyz/${currentLink.shortCode}`} />
+              </dd>
+            </div>
             <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
               <dt className="font-medium text-gray-900">Original Link</dt>
               <dd className="text-gray-700 sm:col-span-2">

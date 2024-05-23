@@ -76,7 +76,7 @@ export default function Hero() {
             <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
               Empower Your Links With Data Intelligence
             </h2>
-            <ul className="list-disc text-gray-500 dark:text-gray-400 text-lg font-normal mb-4">
+            <ul className="list-inside list-disc text-gray-500 dark:text-gray-400 text-lg font-normal mb-4">
               <li>
                 <b>Elegant Shortening</b>: Create shorter, more memorable links
                 that reflect your brand and message.
@@ -109,7 +109,7 @@ export default function Hero() {
               In Three Simple Steps
             </h2>
 
-            <ol className="list-decimal text-gray-500 dark:text-gray-400 text-lg font-normal mb-4">
+            <ol className="list-inside list-decimal text-gray-500 dark:text-gray-400 text-lg font-normal mb-4">
               <li>
                 <b>Shorten</b>: Enter your long link to instantly get a shorter,
                 more manageable version.
