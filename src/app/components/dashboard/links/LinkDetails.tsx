@@ -61,8 +61,10 @@ export const LinkDetails = async ({ shortCode }: Props) => {
             <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
               <dt className="font-medium text-gray-900">daLink</dt>
               <dd className="text-gray-700 sm:col-span-2">
-                <code className="mr-3">dalink.xyz/{currentLink.shortCode}</code>
-                <CopyText text={`dalink.xyz/${currentLink.shortCode}`} />
+                <code className="mr-3">
+                  www.dalink.xyz/{currentLink.shortCode}
+                </code>
+                <CopyText text={`www.dalink.xyz/${currentLink.shortCode}`} />
               </dd>
             </div>
             <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
